@@ -8,7 +8,7 @@ from openai import OpenAI
 st.set_page_config(page_title="My AI Chatbot", page_icon="🤖", layout="centered")
 
 load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
+groq_api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
 
 client = OpenAI(
     api_key=groq_api_key,
